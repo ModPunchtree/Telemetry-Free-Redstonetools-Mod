@@ -26,6 +26,6 @@ public class SendCommandMixin {
             return;
         }
 
-        TelemetryUtils.sendCommand(command);
+        //TelemetryUtils.sendCommand(command);
     }
 }

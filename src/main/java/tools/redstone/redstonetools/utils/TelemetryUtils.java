@@ -26,10 +26,11 @@ public class TelemetryUtils {
     }
 
     public static void sendCrash(CrashReport report) {
-        var client = INJECTOR.getInstance(TelemetryClient.class);
+        return;
+        //var client = INJECTOR.getInstance(TelemetryClient.class);
 
-        client.sendException(new TelemetryException(report.asString(), true));
+        //client.sendException(new TelemetryException(report.asString(), true));
 
-        client.waitForQueueToEmpty();
+        //client.waitForQueueToEmpty();
     }
 }

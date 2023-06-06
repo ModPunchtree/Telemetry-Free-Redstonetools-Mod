@@ -83,7 +83,7 @@ public abstract class IntLikeSerializer<T extends Comparable<T>> extends TypeSer
             try {
                 base = Integer.parseInt(parts[1]);
 
-                if (2 > base || base > 36) {
+                if (2 > base || base > 64) {
                     throw new NumberFormatException();
                 }
             } catch (NumberFormatException ignored) {

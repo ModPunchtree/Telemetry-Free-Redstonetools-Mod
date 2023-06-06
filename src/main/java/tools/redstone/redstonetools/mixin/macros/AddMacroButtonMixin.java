@@ -20,7 +20,7 @@ public class AddMacroButtonMixin extends GameOptionsScreen {
 
     @Inject(method = "init", at = @At("TAIL"))
     public void init(CallbackInfo ci) {
-        this.addDrawableChild(new ButtonWidget(this.width / 2 + 5, this.height / 6 + 36, 150, 20, Text.of("Macros..."), (button) -> {
+        this.addDrawableChild(new ButtonWidget(this.width / 2 + 5, this.height / 6 + 36, 150, 50, Text.of("Macros..."), (button) -> {
             this.client.setScreen(new MacroSelectScreen(this,super.gameOptions,Text.of("Macros")));
         }));
     }

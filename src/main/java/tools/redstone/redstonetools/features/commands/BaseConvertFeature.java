@@ -26,6 +26,17 @@ public class BaseConvertFeature extends CommandFeature {
     protected Feedback execute(ServerCommandSource source) {
         var output = number.getValue().toString(toBase.getValue());
 
+        if (toBase.getValue() == 2)
+            output = "0b" + number.getValue().toString(toBase.getValue());
+        else if (toBase.getValue() == 8)
+            output = "0o" + number.getValue().toString(toBase.getValue());
+        else if (toBase.getValue() == 10)
+            output = "0d" + number.getValue().toString(toBase.getValue());
+        else if (toBase.getValue() == 16)
+            output = "0x" + number.getValue().toString(toBase.getValue());
+        else
+            output = "Base " + toBase.getValue().toString() + ": " + number.getValue().toString(toBase.getValue());
+
         return Feedback.success(output);
     }
 }

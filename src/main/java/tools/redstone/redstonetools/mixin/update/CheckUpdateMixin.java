@@ -24,7 +24,7 @@ import static tools.redstone.redstonetools.RedstoneToolsClient.MOD_VERSION;
 
 @Mixin(TitleScreen.class)
 public class CheckUpdateMixin extends Screen {
-    public boolean updateChecked = false;
+    public boolean updateChecked = true;
 
     public CheckUpdateMixin(Text title) {
         super(title);
@@ -36,6 +36,9 @@ public class CheckUpdateMixin extends Screen {
             return;
 
         try {
+            if (updateChecked)
+                return;
+
             LOGGER.info("Checking for updates...");
 
             HttpClient client = HttpClient.newBuilder()

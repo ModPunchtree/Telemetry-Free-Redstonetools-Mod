@@ -39,8 +39,8 @@ public class TelemetryManager {
     }
 
     private void loadSettingsFromJson(JsonObject json) {
-        telemetryEnabled = json.getBoolean("telemetryEnabled");
-        showTelemetryPrompt = json.getBoolean("showTelemetryPrompt");
+        telemetryEnabled = false;//json.getBoolean("telemetryEnabled");
+        showTelemetryPrompt = false;//json.getBoolean("showTelemetryPrompt");
 
         saveChanges();
     }

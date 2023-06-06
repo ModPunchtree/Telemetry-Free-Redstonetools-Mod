@@ -21,7 +21,7 @@ import static tools.redstone.redstonetools.features.arguments.serializers.FloatS
 public class QuickTpFeature extends CommandFeature {
     public static final Argument<Float> distance = Argument
             .ofType(floatArg(1.0f))
-            .withDefault(50.0f);
+            .withDefault(64.0f);
     public static final Argument<Boolean> includeFluids = Argument
             .ofType(bool())
             .withDefault(false);

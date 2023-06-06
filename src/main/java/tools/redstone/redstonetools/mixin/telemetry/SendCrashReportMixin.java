@@ -12,6 +12,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class SendCrashReportMixin {
     @Inject(method = "printCrashReport", at = @At("TAIL"))
     private static void printCrashReport(CrashReport report, CallbackInfo ci) {
-        TelemetryUtils.sendCrash(report);
+        //TelemetryUtils.sendCrash(report);
     }
 }

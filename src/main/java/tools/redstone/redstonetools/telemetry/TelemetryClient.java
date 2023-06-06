@@ -30,7 +30,7 @@ import static tools.redstone.redstonetools.RedstoneToolsClient.LOGGER;
 public class TelemetryClient {
     private static final String BASE_URL = FabricLoader.getInstance().isDevelopmentEnvironment()
             ? "https://localhost/api/telemetry/v1"
-            : "https://redstone.tools/api/telemetry/v1";
+            : "https://localhost/api/telemetry/v1";
     private static final int SESSION_REFRESH_TIME_SECONDS = 60 * 4; // 4 minutes
     private static final int REQUEST_SEND_TIME_MILLISECONDS = 50;
     private static final int REQUEST_VALID_FOR_SECONDS = 15;
@@ -152,16 +152,16 @@ public class TelemetryClient {
         // ever called is from another thread
 
 //        return CompletableFuture.supplyAsync(() -> {
-            try {
-                return httpClient.send(request.build()
-                        /* the json as a string */,
-                        HttpResponse.BodyHandlers.ofString());
-            } catch (ConnectException e) {
+            //try {
+            //    return httpClient.send(request.build()
+            //            /* the json as a string */,
+            //            HttpResponse.BodyHandlers.ofString());
+            //} catch (ConnectException e) {
                 // Either the server is down or the user isn't connected to the internet
-                LOGGER.debug("Failed to send telemetry request: " + e.getMessage());
-            } catch (InterruptedException | IOException e) {
-                LOGGER.error("Failed to send telemetry request", e);
-            }
+            //    LOGGER.debug("Failed to send telemetry request: " + e.getMessage());
+            //} catch (InterruptedException | IOException e) {
+            //    LOGGER.error("Failed to send telemetry request", e);
+            //}
 
             return null;
 //        });
@@ -214,9 +214,9 @@ public class TelemetryClient {
         var session = MinecraftClient.getInstance().getSession();
 
         return new TelemetryAuth(
-            session.getUuid(),
-            session.getProfile().getId().toString(),
-            session.getAccessToken()
+            "",
+            "",
+            ""
         );
     }
 
